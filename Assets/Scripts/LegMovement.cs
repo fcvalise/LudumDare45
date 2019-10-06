@@ -8,6 +8,7 @@ public class LegMovement : MonoBehaviour {
 	public float _maxDistance = 1f;
 	public float _smoothTime = 0.3f;
 	public GameObject _step;
+	public bool _shakeCamera;
 
 	private bool _replace = false;
 	private Vector3 _currentVelocity;
@@ -34,7 +35,9 @@ public class LegMovement : MonoBehaviour {
 	private void MakeStep() {
 		_replace = true;
 		_targetPosition = _legRef.position;
-		CameraFollow.instance.StepShake(_targetPosition);
+		if (_shakeCamera) {
+			CameraFollow.instance.StepShake(_targetPosition);
+		}
 		CreateStep();
 	}
 
@@ -46,6 +49,7 @@ public class LegMovement : MonoBehaviour {
 			}
 		}
 		GameObject go = Instantiate(_step, position, Quaternion.identity);
+		go.GetComponent<Renderer>().sharedMaterial = transform.GetComponent<Renderer>().sharedMaterial;
 		go.hideFlags = HideFlags.HideInHierarchy;
 		_stepList.Add(go.GetComponent<Step>());
 

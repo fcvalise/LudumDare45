@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VoronoiColorStar
+  m_Name: VoronoiColorFish
   m_Shader: {fileID: -6465566751694194690, guid: 053ed55ab2e6c421f85a09928a9569a5,
     type: 3}
   m_ShaderKeywords: 
@@ -27,9 +27,8 @@ Material:
     m_Floats:
     - Vector1_248A07C6: 1
     - Vector1_4E552F3D: 0
-    - Vector1_96D31180: 2
-    - Vector1_C0AA1960: 0.54
-    - Vector1_ECF2F1AC: 2.28
-    - Vector1_F43701C6: 1
+    - Vector1_96D31180: 0.5
+    - Vector1_C0AA1960: 0.75
+    - Vector1_F43701C6: 2
     m_Colors:
-    - Color_68329DF1: {r: 0, g: 0, b: 0, a: 1}
+    - Color_68329DF1: {r: 1, g: 0.23291641, b: 0.12549019, a: 1}
