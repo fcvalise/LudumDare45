@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8929276002596665223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5900284, y: -0.95149446, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8929276003256692099}
@@ -94,6 +94,7 @@ MonoBehaviour:
   _otherLeg: {fileID: 8929276003168664927}
   _maxDistance: 1
   _smoothTime: 0.1
+  _step: {fileID: 9138953057497560820, guid: ea488f17fc0484bad81cb65d1daa87f6, type: 3}
 --- !u!1 &8929276002894284840
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8929276002894284841
 Transform:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ GameObject:
   - component: {fileID: 8929276003111880717}
   - component: {fileID: 8929276003111880718}
   m_Layer: 0
-  m_Name: Body
+  m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8929276003111880716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1900284, y: -0.5514945, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8929276003762315695}
@@ -201,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8929276003168664923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.79002845, y: -0.15149447, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8929276003256692099}
@@ -268,6 +269,7 @@ MonoBehaviour:
   _otherLeg: {fileID: 8929276002596665227}
   _maxDistance: 1
   _smoothTime: 0.1
+  _step: {fileID: 9138953057497560820, guid: ea488f17fc0484bad81cb65d1daa87f6, type: 3}
 --- !u!1 &8929276003256692098
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb577e1b1019046d39a87eccf93290f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material: {fileID: 0}
+  _material: {fileID: 2100000, guid: 01ed8c8bd70b04e40b6d5a720a14ff3b, type: 2}
   _rendererList:
   - {fileID: 8929276002596665224}
   - {fileID: 8929276003168664924}
@@ -438,7 +440,7 @@ GameObject:
   - component: {fileID: 8929276003762315697}
   - component: {fileID: 8929276003762315696}
   m_Layer: 8
-  m_Name: Head
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
