@@ -36,7 +36,7 @@ public class LegMovement : MonoBehaviour {
 		_replace = true;
 		_targetPosition = _legRef.position;
 		if (_shakeCamera) {
-			CameraFollow.instance.StepShake(_targetPosition);
+			// CameraFollow.instance.StepShake(_targetPosition);
 		}
 		CreateStep();
 	}

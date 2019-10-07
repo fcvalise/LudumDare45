@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemySearch : MonoBehaviour
-{
+public class EnemySearch : MonoBehaviour {
 	public enum State {
 		Chill,
 		Curious,
@@ -12,32 +11,42 @@ public class EnemySearch : MonoBehaviour
 	public float _alertDistance = 5f;
 	public State _state = State.Chill;
 
-	private CircleCollider2D _collider = null;
 	private CharacterState _playerState = null;
-	
-	private void Start() {
-		Collider2D collider = Physics2D.OverlapCircle(transform.position, float.MaxValue, _playerLayerMask);
-		_playerState = collider.GetComponent<CharacterState>();
-		_collider = GetComponent<CircleCollider2D>();
-	}
-	
-	private void Update() {
-		Vector2 position = (Vector2)transform.position + _collider.offset.x * (Vector2)transform.right;
-		Collider2D collider = Physics2D.OverlapCircle(position, _collider.radius, _playerLayerMask);
+	public Transform _player = null;
 
-		if (collider != null && !_playerState._isInWater) {
-			Transform player = collider.transform;
-			float distance = Vector2.Distance(player.position, transform.position);
-
-			if (distance < _alertDistance) {
-				_state = State.Alert;
-			} else {
+	private void OnTriggerStay2D(Collider2D other) {
+		if (((1 << other.gameObject.layer) & _playerLayerMask) != 0) {
+			_player = other.transform;
+			_playerState = _player.GetComponent<CharacterState>();
+			if (!_playerState._isInWater) {
 				_state = State.Curious;
-				AudioManager.instance.PlaySongRandom();
-				ShakeCamera.instance.AddAmount(0.05f);
 			}
-		} else {
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D other) {
+		// _state = State.Chill;
+		// _playerState = null;
+		// _player = null;
+	}
+
+	private void Update() {
+		if (_playerState != null && _playerState._isInWater) {
 			_state = State.Chill;
+		}
+
+		switch (_state) {
+			case State.Alert:
+			case State.Curious:
+				float distance = Vector2.Distance(_player.position, transform.position);
+
+				if (distance < _alertDistance) {
+					_state = State.Alert;
+				}
+				AudioManager.instance.PlaySongRandom();
+				break;
+			default:
+				break;
 		}
 	}
 }

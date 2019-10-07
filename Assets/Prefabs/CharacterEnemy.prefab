@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!58 &8802708668574016599
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519002361934651990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!114 &5769584405556172090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,7 +49,7 @@ MonoBehaviour:
   _maxTimer: 5
   _speed: 2
   _curiousSpeed: 0.3
-  _alertSpeed: 1
+  _alertSpeed: 0.582
   _enemySearch: {fileID: 5769584405556172090}
 --- !u!1001 &8996209442048666202
 PrefabInstance:
@@ -42,25 +58,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6955698674295097876, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+    - target: {fileID: 6056478439878909039, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1429253455597209754, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
-        type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_LocalPosition.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1429253455597209754, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8929276003256692098, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
-        type: 3}
-      propertyPath: m_Name
-      value: CharacterEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8929276003256692099, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
         type: 3}
@@ -117,26 +118,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8929276003256692098, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_Name
+      value: CharacterEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429253455597209754, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429253455597209754, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086026630231462892, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086026630231462892, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8929276003762315696, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 267bb35fef96d452ab4f09b14e7f67ea, type: 2}
+    - target: {fileID: 6955698674295097876, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1934652292386841173, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
         type: 3}
       propertyPath: _material
       value: 
       objectReference: {fileID: 2100000, guid: 267bb35fef96d452ab4f09b14e7f67ea, type: 2}
-    - target: {fileID: 4086026630231462892, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4086026630231462892, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
-        type: 3}
-      propertyPath: m_Radius
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e9af2f33731045e2a3b3e4ed8695fc8, type: 3}
 --- !u!1 &8433374369483501742 stripped

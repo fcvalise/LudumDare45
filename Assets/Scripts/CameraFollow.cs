@@ -23,7 +23,12 @@ public class CameraFollow : MonoBehaviour {
 			_timer += Time.deltaTime;
 			_stepShake = Vector3.Lerp(_stepShake, Vector3.zero, Mathf.Min(_timer / _stepShakeDuration, 1f));
 			Vector3 targetPosition = _target.position + _offset + _stepShake;
-			transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, _smoothTime);
+			Vector3 cameraPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, _smoothTime);
+			cameraPosition.y = 0f;
+			if (cameraPosition.x < -5f) {
+				cameraPosition.x = -5f;
+			}
+			transform.position = cameraPosition;
 		}
 	}
 

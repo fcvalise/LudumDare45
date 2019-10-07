@@ -4,7 +4,6 @@ public class EnemyTargetMovement : MonoBehaviour {
 	public float _maxDistanceFromSpawn = 15f;
 	public float _maxTimer = 10f;
 	public float _speed = 1f;
-	private float _chillDrag = 0.99f;
 	[Range(0f, 1f)] public float _curiousSpeed = 0.3f;
 	[Range(0f, 1f)] public float _alertSpeed = 1f;
 	public EnemySearch _enemySearch = null;
@@ -32,16 +31,13 @@ public class EnemyTargetMovement : MonoBehaviour {
 					_timer = Random.value * _maxTimer;
 					_randomSteer = Random.insideUnitSphere;
 				}
-				transform.position = (Vector2)transform.position + _steer * _chillDrag + _randomSteer * Time.deltaTime * _speed;
-			break;
-			case EnemySearch.State.Curious:
-				transform.position = Vector3.Lerp(transform.position, Player.PlayerTransform.position, _curiousSpeed);
-				_timer = 0f;
-			break;
+				transform.position = (Vector2) transform.position + _randomSteer * Time.deltaTime * _speed;
+				break;
 			case EnemySearch.State.Alert:
-				transform.position = Vector3.Lerp(transform.position, Player.PlayerTransform.position, _alertSpeed);
+			case EnemySearch.State.Curious:
+				transform.position = _enemySearch._player.position;
 				_timer = 0f;
-			break;
+				break;
 		}
 	}
 }
