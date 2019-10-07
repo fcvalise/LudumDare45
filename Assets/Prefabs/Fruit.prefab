@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7622602981730086167}
   - component: {fileID: 6993996240956930368}
   - component: {fileID: 7752485047782822719}
+  - component: {fileID: 6184686265587792078}
   m_Layer: 8
   m_Name: Fruit
   m_TagString: Untagged
@@ -90,5 +91,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69f57e8c91644986a0805352360e312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
   _distance: 2
-  _smoothTime: 0.5
+  _smoothTime: 0.3
+--- !u!114 &6184686265587792078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892315269584485245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15c07101771d4a38ad14ad721f80b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waterLayerMask:
+    serializedVersion: 2
+    m_Bits: 16
+  _isInWater: 0

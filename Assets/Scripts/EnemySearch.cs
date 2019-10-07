@@ -14,7 +14,6 @@ public class EnemySearch : MonoBehaviour
 
 	private CircleCollider2D _collider = null;
 	private CharacterState _playerState = null;
-	private Transform _player = null;
 	
 	private void Start() {
 		Collider2D collider = Physics2D.OverlapCircle(transform.position, float.MaxValue, _playerLayerMask);
@@ -34,6 +33,8 @@ public class EnemySearch : MonoBehaviour
 				_state = State.Alert;
 			} else {
 				_state = State.Curious;
+				AudioManager.instance.PlaySongRandom();
+				ShakeCamera.instance.AddAmount(0.05f);
 			}
 		} else {
 			_state = State.Chill;
