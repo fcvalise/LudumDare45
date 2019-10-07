@@ -9,11 +9,16 @@ public class LegMovement : MonoBehaviour {
 	public float _smoothTime = 0.3f;
 	public GameObject _step;
 	public bool _shakeCamera;
+	public AudioSource _audioSource;
 
 	private bool _replace = false;
 	private Vector3 _currentVelocity;
 	private Vector3 _targetPosition;
 	private List<Step> _stepList = new List<Step>();
+
+	private void Start() {
+		_audioSource = GetComponent<AudioSource>();
+	}
 
 	private void Update() {
 		float distance = Vector3.Distance(transform.position, _legRef.position);
@@ -35,6 +40,9 @@ public class LegMovement : MonoBehaviour {
 	private void MakeStep() {
 		_replace = true;
 		_targetPosition = _legRef.position;
+		if (_audioSource) {
+			_audioSource.Play();
+		}
 		if (_shakeCamera) {
 			// CameraFollow.instance.StepShake(_targetPosition);
 		}

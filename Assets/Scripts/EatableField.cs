@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EatableField : MonoBehaviour {
 	public GameObject _prefabTree = null;
@@ -15,9 +15,15 @@ public class EatableField : MonoBehaviour {
 
 	private void Start() {
 		for (int i = 0; i < _countTree; i++) {
-			Vector3 position = transform.position + (Vector3)Random.insideUnitCircle * _radiusTree;
+			Vector3 position = transform.position + (Vector3) Random.insideUnitCircle * _radiusTree;
 			GameObject tree = Instantiate(_prefabTree, position, Quaternion.identity);
 			_treeList.Add(tree.transform);
+		}
+		foreach (Transform tree in _treeList) {
+			for (int i = 0; i < _countFruit; i++) {
+				Vector3 position = tree.position + (Vector3) Random.insideUnitCircle * _radiusFruit;
+				Instantiate(_prefabFruit, position, Quaternion.identity, tree);
+			}
 		}
 	}
 
@@ -28,7 +34,7 @@ public class EatableField : MonoBehaviour {
 			foreach (Transform tree in _treeList) {
 				if (tree.childCount == 0 && Random.value > 0.5f) {
 					for (int i = 0; i < _countFruit; i++) {
-						Vector3 position = tree.position + (Vector3)Random.insideUnitCircle * _radiusFruit;
+						Vector3 position = tree.position + (Vector3) Random.insideUnitCircle * _radiusFruit;
 						Instantiate(_prefabFruit, position, Quaternion.identity, tree);
 					}
 					break;

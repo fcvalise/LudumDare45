@@ -45,5 +45,5 @@ Material:
     - _VoronoiSpeed: 1
     m_Colors:
     - Color_68329DF1: {r: 1, g: 0.4575472, b: 0.89793056, a: 1}
-    - _AlphaColor: {r: 0, g: 0, b: 0, a: 0}
+    - _AlphaColor: {r: 1, g: 0.6117647, b: 0.91764706, a: 0}
     - _ColorVoronoi: {r: 0, g: 0, b: 0, a: 0}

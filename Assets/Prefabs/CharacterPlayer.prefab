@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee03cb76f829f4875b531abad3b2b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
 --- !u!1001 &5845250786113913100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +205,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _shakeCamera
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571009487427507544, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571009487427507544, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: ClampVelocityModule.drag.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571009487427507544, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: ClampVelocityModule.drag.minScalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571009487427507544, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571009487427507544, guid: 4e9af2f33731045e2a3b3e4ed8695fc8,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e9af2f33731045e2a3b3e4ed8695fc8, type: 3}

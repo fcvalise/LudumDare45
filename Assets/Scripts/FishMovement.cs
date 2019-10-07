@@ -7,6 +7,7 @@ public class FishMovement : MonoBehaviour {
 	public float _maxTimer = 10f;
 	public float _speed = 1f;
 	public float _drag = 0.95f;
+	public LayerMask _playerLayerMask;
 
 	private Vector3 _target = Vector3.zero;
 	private float _timer = 0;
@@ -24,5 +25,16 @@ public class FishMovement : MonoBehaviour {
 		transform.localPosition = localPosition;
 		_steer.z = 0f;
 		transform.right = _steer;
+
+	}
+
+	private void OnTriggerStay2D(Collider2D other) {
+
+		Debug.Log("Collide");
+		if (((1 << other.gameObject.layer) & _playerLayerMask) != 0) {
+			Debug.Log("Player");
+			Destroy(gameObject.transform.parent.gameObject);
+		}
+
 	}
 }

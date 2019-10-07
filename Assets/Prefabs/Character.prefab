@@ -5119,6 +5119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _target: {fileID: 2494432138147065807}
+  _constraint: {x: 1, y: 1}
 --- !u!114 &7640640038833753745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,6 +5148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50aef6a252a446ecb3784b4748fb642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  _particleDeath: {fileID: 7571009487427507544}
 --- !u!1 &8929276003168664923
 GameObject:
   m_ObjectHideFlags: 0

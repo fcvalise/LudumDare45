@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public class Eatable : MonoBehaviour {
+	public static float _timer;
+
 	public enum State {
 		Tree,
 		Player,
@@ -13,8 +15,9 @@ public class Eatable : MonoBehaviour {
 	public LayerMask _enemyLayerMask;
 	public LayerMask _waterLayerMask;
 	public float _smoothTime = 0.3f;
-	public int _maxFoodLevel = 80;
+	public int _maxFoodLevel = 30;
 	public AnimationCurve _animationCurve;
+	public float _interval = 0.3f;
 
 	private State _state = State.Tree;
 	private Vector3 _currentVelocity;
@@ -40,6 +43,7 @@ public class Eatable : MonoBehaviour {
 				Player.FoodLevel++;
 				Debug.Log(Player.FoodLevel);
 				_smoothTime = Mathf.Lerp(0.05f, 0.99f, _animationCurve.Evaluate((float) Player.FoodLevel / (float) _maxFoodLevel));
+				transform.localScale = _smoothTime * Vector3.one;
 			}
 			_state = State.Player;
 			_target = other.transform;
@@ -50,10 +54,11 @@ public class Eatable : MonoBehaviour {
 	private void OnTriggerStay2D(Collider2D other) {
 		_isInWater = ((1 << other.gameObject.layer) & _waterLayerMask) != 0;
 		if (!_isInWater && _state == State.Player && ((1 << other.gameObject.layer) & _enemyLayerMask) != 0) {
-			if (_state == State.Player) {
+			if (_state == State.Player && _timer < 0f) {
 				// _audioSource.clip = _destroyAudioClip;
 				// _audioSource.pitch = Random.Range(0.7f, 1f);
 				// _audioSource.Play();
+				_timer = _interval;
 				Player.FoodLevel--;
 				_state = State.Enemy;
 				_target = other.transform;
@@ -71,36 +76,13 @@ public class Eatable : MonoBehaviour {
 				break;
 			case State.Enemy:
 				transform.position = Vector3.SmoothDamp(transform.position, _target.position, ref _currentVelocity, _smoothTime);
-				if (Vector3.Distance(transform.position, _target.position) < 0.5f) {
+				if (Vector3.Distance(transform.position, _target.position) < 0.3f) {
 					StartCoroutine(Disappear());
 					_state = State.Destroyed;
 				}
 				break;
 		}
 	}
-
-	// private void Update() {
-	// 	if (_destroyed) {
-	// 		return;
-	// 	}
-	// 	// If not attached to a tree, can be eat by enemy
-	// 	Collider2D collider = Physics2D.OverlapCircle(transform.position, 0.1f, _enemyLayerMask);
-	// 	if (collider != null && transform.parent == null) {
-	// 		transform.position = Vector3.SmoothDamp(transform.position, collider.transform.position, ref _currentVelocity, _smoothTime);
-	// 		if (Vector3.Distance(collider.transform.position, transform.position) < _distance * 0.5f) {
-	// 			StartCoroutine(Disappear());
-	// 			_destroyed = true;
-	// 		}
-	// 		return;
-	// 	}
-
-	// 	Vector2 position = Player.PlayerTransform.position;
-	// 	if (Vector2.Distance(position, transform.position) < _distance) {
-
-	// 	}
-
-	// 	if (Vector3.Distance(position, transform.position) < _distance * 0.5f) { }
-	// }
 
 	private IEnumerator Appear() {
 		Vector3 scale = transform.localScale;

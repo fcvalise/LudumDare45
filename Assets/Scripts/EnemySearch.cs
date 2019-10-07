@@ -25,9 +25,9 @@ public class EnemySearch : MonoBehaviour {
 	}
 
 	private void OnTriggerExit2D(Collider2D other) {
-		// _state = State.Chill;
-		// _playerState = null;
-		// _player = null;
+		_state = State.Chill;
+		_playerState = null;
+		_player = null;
 	}
 
 	private void Update() {

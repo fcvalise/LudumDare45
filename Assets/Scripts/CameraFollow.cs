@@ -28,6 +28,9 @@ public class CameraFollow : MonoBehaviour {
 			if (cameraPosition.x < -5f) {
 				cameraPosition.x = -5f;
 			}
+			if (cameraPosition.x > 200f) {
+				cameraPosition.x = 200f;
+			}
 			transform.position = cameraPosition;
 		}
 	}

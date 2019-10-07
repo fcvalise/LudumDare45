@@ -42,8 +42,8 @@ Material:
     - VoronoiCellDensity: 2
     - _AlphaCoef: 1
     - _PositionModifierSpeed: 1
-    - _VoronoiAttenuation: 0.75
-    - _VoronoiSpeed: 0.5
+    - _VoronoiAttenuation: 0.889
+    - _VoronoiSpeed: 1.49
     m_Colors:
     - Color_68329DF1: {r: 0.1273585, g: 0.90541995, b: 1, a: 1}
     - _AlphaColor: {r: 0.11961552, g: 0.31449685, b: 0.6037736, a: 1}
