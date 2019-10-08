@@ -28,11 +28,11 @@ public class EatableField : MonoBehaviour {
 	}
 
 	private void Update() {
-		_timer += Time.deltaTime;
 
 		if (_timer > _duration) {
 			foreach (Transform tree in _treeList) {
-				if (tree.childCount == 0 && Random.value > 0.5f) {
+				if (tree.childCount == 0) {
+					_timer += Time.deltaTime;
 					for (int i = 0; i < _countFruit; i++) {
 						Vector3 position = tree.position + (Vector3) Random.insideUnitCircle * _radiusFruit;
 						Instantiate(_prefabFruit, position, Quaternion.identity, tree);

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VoronoiColorEyes
+  m_Name: WaterDeep2
   m_Shader: {fileID: -6465566751694194690, guid: 7be8e140d96c06e4e9a51e33e0119242,
     type: 3}
   m_ShaderKeywords: 
@@ -35,16 +35,16 @@ Material:
     m_Floats:
     - Vector1_248A07C6: 1
     - Vector1_4E552F3D: 0
-    - Vector1_96D31180: 1
-    - Vector1_C0AA1960: 0.6
+    - Vector1_96D31180: 0.5
+    - Vector1_C0AA1960: 0.75
     - Vector1_ECF2F1AC: 1
     - Vector1_F43701C6: 2
-    - VoronoiCellDensity: 8.06
-    - _AlphaCoef: 2.39
+    - VoronoiCellDensity: 2
+    - _AlphaCoef: 1
     - _PositionModifierSpeed: 1
-    - _VoronoiAttenuation: 1
-    - _VoronoiSpeed: 1
+    - _VoronoiAttenuation: 0.889
+    - _VoronoiSpeed: 1.49
     m_Colors:
-    - Color_68329DF1: {r: 0, g: 0, b: 0, a: 1}
-    - _AlphaColor: {r: 1, g: 0.52108866, b: 0.34901965, a: 0.45882353}
+    - Color_68329DF1: {r: 0.1273585, g: 0.90541995, b: 1, a: 1}
+    - _AlphaColor: {r: 0.11961552, g: 0.31449685, b: 0.6037736, a: 1}
     - _ColorVoronoi: {r: 0, g: 0, b: 0, a: 0}

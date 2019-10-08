@@ -9,4 +9,16 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         instance = this;
     }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            IntervalFood = 0.22f;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            IntervalFood = 0.3f;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            IntervalFood = 0.35f;
+        }
+    }
 }
