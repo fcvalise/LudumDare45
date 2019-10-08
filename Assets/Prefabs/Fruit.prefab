@@ -104,7 +104,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16
   _smoothTime: 0.1
-  _maxFoodLevel: 80
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -129,9 +128,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _minScale: 0.5
+  _maxScale: 1.5
   _isInWater: 0
   _eatAudioClip: {fileID: 8300000, guid: a229e488ed0ee5f4c84e06132c4b8d3f, type: 3}
-  _destroyAudioClip: {fileID: 8300000, guid: 76ffa14b6aa984743a18edb6334e2bf0, type: 3}
+  _destroyAudioClip:
+  - {fileID: 8300000, guid: 76ffa14b6aa984743a18edb6334e2bf0, type: 3}
+  - {fileID: 8300000, guid: d47a3901e65684a9080647890ccb7e74, type: 3}
+  - {fileID: 8300000, guid: dcfbeaff6f2eb446cbdba742a097b5e0, type: 3}
 --- !u!58 &-3441889896416391322
 CircleCollider2D:
   m_ObjectHideFlags: 0

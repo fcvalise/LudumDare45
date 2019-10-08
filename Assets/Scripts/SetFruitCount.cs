@@ -7,11 +7,10 @@ public class SetFruitCount : MonoBehaviour {
     public TextMeshPro _textMeshPro;
 
     private void Start() {
-        Player.FoodLevel = 0;
         _textMeshPro = GetComponent<TextMeshPro>();
     }
 
     private void Update() {
-        _textMeshPro.text = (Mathf.Clamp(Player.FoodLevel, 0, 40)).ToString();
+        _textMeshPro.text = (Mathf.Clamp(Eatable._playerEatable.Count, 0, GameManager.instance.MaxFood)).ToString();
     }
 }
